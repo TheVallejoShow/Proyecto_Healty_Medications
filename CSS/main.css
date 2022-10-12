@@ -1,0 +1,279 @@
+.color1 {color: #acd5ff;}
+.color2 {color: #faf9ff;}
+.color3 {color: #141a35;}
+.color4 {color: #76777c;}
+.color5 {color: #e2e2e2;}
+.color6 {color: #0892ff;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#creationMedicine {
+
+}
+
+#creationMedicine .containerMedicine {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0 0 0;
+}
+
+#creationMedicine .containerMedicine .tittleMedicine {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+}
+
+#creationMedicine .containerMedicine .formMedicine {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#medicines {
+    /*height: 550px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#medicines .containerMedicines {
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#medicines .containerMedicines .medicines {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* margin: 20px; */
+    justify-content: center;
+}
+
+#medicines .containerMedicines .medicines .medicine {
+    /*background-color: #cdcdcd;*/
+    margin: 10px;
+    padding: 20px;
+    /*border: 1px solid black;*/
+    box-shadow: 0px 0px 0px 2px #939393;
+    border-radius: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#medicines .containerMedicines .medicines .imageMecicine{
+    width: 150px;
+    height: 150px;
+}
+
+#medicines .containerMedicines .medicines .medicine .containerText {
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+#medicines .containerMedicines .medicines .medicine .containerText .tittleMedicine {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#medicines .containerMedicines .medicines .medicine .containerText .descriptionMedicine {
+
+}
+
+#consult {
+
+}
+
+#consult .containerConsult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 0;
+}
+
+#consult .containerConsult .titleConsult {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#consult .containerConsult  .containerInputConsult {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 400px;
+}
+
+
+#banner {
+
+}
+
+#banner .containerBanner {
+    background-image: url("../IMG/wallpaper.jpg");
+    background-color: rgb(0, 0, 0, 0.4);
+    color: #faf9ff;
+    background-blend-mode: darken;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: auto;
+    border-width: 0;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#banner .containerBanner .containerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#banner .containerBanner .containerText .title {
+    font-size: 60px;
+}
+
+#banner .containerBanner .containerText .titleBold {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+#products {
+    margin: 50px 0;
+}
+
+#products .containerProducts {
+
+}
+
+#products .containerProducts .containerTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: #46cad6;
+    /*color: #acd5ff;
+    -webkit-text-stroke: 1px #141a35;*/
+    margin: 0 0 40px 0;
+
+}
+
+#products .containerProducts .containerTitle .iconTitle {
+    font-size: 100px;
+}
+
+#products .containerProducts .containerTitle .title {
+    margin: 0 0px 0 20px;
+    font-weight: bold;
+    font-size: 55px;
+}
+
+#information {
+    margin: 100px 0px;
+}
+
+#information .containerInformation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#information .containerInformation .containerIMG .imgInformation {
+    width: 650px;
+}
+
+#information .containerInformation .containerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#information .containerInformation .containerText .containerTextTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    color: #46cad6;
+    margin: 0 0 30px 0;
+}
+
+#information .containerInformation .containerText .containerTextTitle .iconTitle {
+    font-size: 70px;
+}
+
+#information .containerInformation .containerText .containerTextTitle .textTitle {
+    margin: 0;
+    font-size: 33px;
+    font-weight: bold;
+}
+
+#information .containerInformation .containerText .containerItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#information .containerInformation .containerText .containerItems .containerItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    width: 500px;
+    margin: 5px 0 10px 0;
+}
+
+#information .containerInformation .containerText .containerItems .containerItem .indicator {
+    font-size: 30px;
+    color: #46cad6;
+}
+
+#information .containerInformation .containerText .containerItems .containerItem .textItem {
+    margin: 0 0 0 15px;
+    font-size: 15px;
+}
+
+#carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carrusel .containerCarousel {
+    width: 80%;
+}
+
+#carrusel .containerCarousel .imgCarrusel {
+    width: 100%;
+    height: 420px;
+}
