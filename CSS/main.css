@@ -19,13 +19,14 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 50px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 #creationMedicine .containerMedicine .tittleMedicine {
     font-size: 40px;
     font-weight: bold;
     margin: 0 0 20px 0;
+    color: #46cad6;
 }
 
 #creationMedicine .containerMedicine .formMedicine {
@@ -108,6 +109,7 @@
 #consult .containerConsult .titleConsult {
     font-size: 40px;
     font-weight: bold;
+    color: #46cad6;
 }
 
 #consult .containerConsult  .containerInputConsult {
@@ -194,7 +196,7 @@
 }
 
 #information {
-    margin: 100px 0px;
+    margin: 50px 0px 80px 0;
 }
 
 #information .containerInformation {
@@ -277,3 +279,118 @@
     width: 100%;
     height: 420px;
 }
+
+#navbar .styleNavbar {
+    background-color: #46cad6 !important;
+}
+
+#navbar .styleNavbar .textNavbar {
+    color: white;
+    font-weight: bold;
+}
+
+#navbar .styleNavbar .active {
+    background-color: white;
+    color: black !important;
+    border-radius: 18px;
+}
+
+#navbar .styleNavbar .nav-item {
+    margin: 0 5px;
+}
+
+#navbar .styleNavbar .nav-item:hover {
+    background-color: rgb(187, 187, 187);
+    border-radius: 18px;
+}
+
+#navbar .styleNavbar .imgNavbar {
+    width: 50px;
+}
+
+#navbar .styleNavbar .navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+@media(max-width: 990px) {
+    #navbar .styleNavbar .active {
+        padding: 10px 50px;
+    }
+
+    #navbar .styleNavbar .nav-item {
+        margin: 5px 0;
+    }
+
+    #banner .containerBanner .containerText .titleBold {
+        text-align: center;
+    }
+    
+    #information .containerInformation {
+        flex-wrap: wrap;
+    }
+
+    #information .containerInformation .containerText .containerTextTitle .textTitle {
+        text-align: center;
+    }
+
+    #products .containerProducts .containerTitle .title {
+        text-align: center;
+        margin: 0;
+    }
+
+    #banner .containerBanner .containerText .titleBold {
+        font-size: 50px;
+    }
+
+    #consult .containerConsult .titleConsult {
+        text-align: center;
+    }
+
+    #consult .containerConsult .containerInputConsult {
+        flex-wrap: wrap;
+        width: auto;
+    }
+
+    #creationMedicine .containerMedicine {
+        text-align: center;
+    }
+
+    .input-group {
+        width: 60% !important;
+    }
+}
+
+@media(max-width: 500px) {
+    #information .containerInformation .containerIMG .imgInformation {
+        width: 300px;
+    }
+
+    #information .containerInformation .containerText {
+        width: 230px;
+    }
+
+    #information .containerInformation .containerText .containerItems .containerItem {
+        width: 300px;
+    }
+
+    #carrusel .containerCarousel .imgCarrusel {
+        height: 200px;
+    }
+
+    #products .containerProducts .containerTitle .title {
+        font-size: 33px;
+    }
+
+    #products .containerProducts .containerTitle .iconTitle {
+        font-size: 80px;
+    }
+
+    #inputConsult {
+        width: 80%;
+        margin: 0 0 30px 0;
+    }
+}
+
