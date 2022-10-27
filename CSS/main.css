@@ -30,12 +30,26 @@
 }
 
 #creationMedicine .containerMedicine .formMedicine {
-    width: 500px;
+    width: 1300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+#creationMedicine .containerMedicine #btn-task-save {
+    margin: 10px 0 30px 0;
+}
+
+#creationMedicine .containerMedicine .input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 40%;
+    margin: 5px;
 }
 
 #medicines {
@@ -361,6 +375,10 @@
     .input-group {
         width: 60% !important;
     }
+
+    #creationMedicine .containerMedicine .formMedicine {
+        width: 800px;
+    }
 }
 
 @media(max-width: 500px) {
@@ -391,6 +409,10 @@
     #inputConsult {
         width: 80%;
         margin: 0 0 30px 0;
+    }
+
+    #creationMedicine .containerMedicine .formMedicine {
+        width: 550px;
     }
 }
 

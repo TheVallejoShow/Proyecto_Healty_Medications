@@ -50,7 +50,9 @@ window.addEventListener('DOMContentLoaded', async () => {
                 
                 taskForm['nameMedicine'].value = medicine.name;
                 taskForm['desciptionMedicine'].value = medicine.description;
+                taskForm['precautionsMedicine'].value = medicine.precautions;
                 taskForm['imageMedicine'].value = medicine.image;
+                taskForm['placeMedicine'].value = medicine.place;
 
                 editStatus = true;
                 id_Medicine = doc.id;
@@ -69,12 +71,14 @@ taskForm.addEventListener("submit", (event) => {
 
     const name = taskForm['nameMedicine'];
     const description = taskForm['desciptionMedicine'];
-    const image = taskForm['desciptionMedicine'];
+    const precautions = taskForm['precautionsMedicine'];
+    const image = taskForm['imageMedicine'];
+    const place = taskForm['placeMedicine'];
 
     if(!editStatus) {
-        saveTask(name.value, description.value, image.value);
+        saveTask(name.value, description.value, precautions.value, image.value, place.value);
     } else {
-        updateMedicine(id_Medicine, {name: name.value, description: description.value, description: image.value})
+        updateMedicine(id_Medicine, {name: name.value, description: description.value, precautions: precautions.value, image: image.value, place: place.value})
         taskForm['btn-task-save'].innerText = "Guardar";
         editStatus = false;
     }

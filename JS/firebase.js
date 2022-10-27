@@ -1,6 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 
 // Conexión con la Base de Datos
 import { 
@@ -12,7 +16,7 @@ import {
   getDoc,
   deleteDoc,
   updateDoc,
-  onSnapshot } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
+  onSnapshot } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,6 +26,7 @@ import {
 const firebaseConfig = {
   apiKey: "AIzaSyBDetKCzvJJmoR4RqfaZGGeoJgqps2Ji1w",
   authDomain: "healthy-medications.firebaseapp.com",
+  databaseURL: "https://healthy-medications-default-rtdb.firebaseio.com",
   projectId: "healthy-medications",
   storageBucket: "healthy-medications.appspot.com",
   messagingSenderId: "702925753019",
@@ -32,12 +37,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
 const db = getFirestore();
 
 // Enviar Datos
-export const saveTask = (name, description, image) => {
-  addDoc(collection(db, "tasks"), {name: name, description: description, image, image});
+export const saveTask = (name, description, precautions, image, place) => {
+  addDoc(collection(db, "tasks"), {name: name, description: description, precautions: precautions, image: image, place: place});
 }
 
 // Traer Datos
@@ -51,3 +57,36 @@ export const deleteMedicine = (id) => deleteDoc(doc(db, "tasks", id));
 export const getMedicine = (id) => getDoc(doc(db, "tasks", id));
 
 export const updateMedicine = (id, newFields) => updateDoc(doc(db, "tasks", id), newFields);
+
+document.getElementById("buttonIngresar").addEventListener("click", function() {
+  const emailUser = document.querySelector("#userName").value;
+  const userPassword = document.querySelector("#userPassword").value;
+
+  /*createUserWithEmailAndPassword(auth, emailUser, userPassword)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    console.log("creado");
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log("errorCode:", errorCode);
+    console.log("errorMessage:", errorMessage);
+  });*/
+
+  signInWithEmailAndPassword(auth, emailUser, userPassword)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    console.log(user);
+    console.log("Se logeo");
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log("errorCode:", errorCode);
+    console.log("errorMessage:", errorMessage);
+  });
+})

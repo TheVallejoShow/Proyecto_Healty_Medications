@@ -39,6 +39,9 @@
                   <li class="nav-item">
                     <a class="textNavbar nav-link" href="./Templates/creation_medicine.html">Crear</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="textNavbar nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Sign Up</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -129,6 +132,41 @@
       </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="signInModalForm" class="formMedicine">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Username:</span>
+                <input type="text" class="form-control" placeholder="Nombre del Medicamento..." aria-label="Username" id="userName" required>
+              </div>
+              <!--<label for="tittle">Tittle:</label>-->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Contraseña:</span>
+                <input type="text" class="form-control" placeholder="Descipción del Medicamento..." aria-label="Password" id="userPassword" required>
+              </div>
+            </form>
+            <button id="buttonIngresar" type="submit" class="btn btn-primary">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    
     <script type="module" src="./JS/home.js"></script>
-</body>
+    <script type="module" src="./modalLogin.js"></script>
+  </body>
 </html>
