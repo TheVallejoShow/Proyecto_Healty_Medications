@@ -4,7 +4,9 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase
 import { 
   getAuth, 
   createUserWithEmailAndPassword, 
-  signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged   } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
 
 // Conexión con la Base de Datos
 import { 
@@ -58,7 +60,12 @@ export const getMedicine = (id) => getDoc(doc(db, "tasks", id));
 
 export const updateMedicine = (id, newFields) => updateDoc(doc(db, "tasks", id), newFields);
 
-document.getElementById("buttonIngresar").addEventListener("click", function() {
+//const signInModal = document.getElementById("signInModal");
+const signInModalForm = document.getElementById("signInModalForm");
+
+signInModalForm.addEventListener("submit", function(event) {
+  //No reiniciar el formulario
+  event.preventDefault();
   const emailUser = document.querySelector("#userName").value;
   const userPassword = document.querySelector("#userPassword").value;
 
@@ -80,6 +87,9 @@ document.getElementById("buttonIngresar").addEventListener("click", function() {
     // Signed in
     const user = userCredential.user;
     console.log(user);
+    // Limpia el formulario
+    signInModalForm.reset();
+    
     console.log("Se logeo");
     // ...
   })
@@ -90,3 +100,34 @@ document.getElementById("buttonIngresar").addEventListener("click", function() {
     console.log("errorMessage:", errorMessage);
   });
 })
+
+const logoutInModal = document.getElementById("logoutInModal");
+
+logoutInModal.addEventListener("click", function(event){
+  event.preventDefault();
+  signOut(auth).then(() => {
+    console.log("Saliste")
+    crearMedicamento.style.display = "none";
+    ingresarUsuario.style.display = "flex";
+    logoutInModal.style.display = "none";
+  }).catch((error) => {
+    // An error happened.
+  });
+})
+
+const crearMedicamento = document.getElementById("crearMedicamento");
+const ingresarUsuario = document.getElementById("ingresarUsuario"); 
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("estas logeado");
+    crearMedicamento.style.display = "flex";
+    ingresarUsuario.style.display = "none";
+    logoutInModal.style.display = "flex";
+    const uid = user.uid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});

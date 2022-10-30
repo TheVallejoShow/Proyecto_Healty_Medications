@@ -35,7 +35,13 @@
                 <a class="textNavbar nav-link active" href="#">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="textNavbar nav-link" href="./creation_medicine.html">Crear</a>
+                <a id="crearMedicamento" class="textNavbar nav-link" href="./creation_medicine.html">Crear</a>
+              </li>
+              <li class="nav-item">
+                <a id="ingresarUsuario" class="textNavbar nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="textNavbar nav-link" href="#" id="logoutInModal">Salir</a>
               </li>
             </ul>
           </div>
@@ -60,6 +66,34 @@
       <div id="tasks-container" class="medicines"></div>
     </div>
   </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="contenedorModal modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="information">
+          <h1 class="title modal-title" id="exampleModalLabel">Ingresa</h1>
+        </div>
+        <div class="modal-body">
+          <form id="signInModalForm" class="formMedicine">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Correo:</span>
+              <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico..." aria-label="Username" id="userName" required>
+            </div>
+            <!--<label for="tittle">Tittle:</label>-->
+            <div class="input-group mb-3">
+              <span class="input-group-text">Contraseña:</span>
+              <input type="password" class="form-control" placeholder="Ingresa tu contraseña" aria-label="Password" id="userPassword" required>
+            </div>
+            <button id="buttonIngresar" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="../JS/consulta.js"></script>
 </body>

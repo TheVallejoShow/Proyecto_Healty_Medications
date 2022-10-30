@@ -41,6 +41,21 @@
 
 #creationMedicine .containerMedicine #btn-task-save {
     margin: 10px 0 30px 0;
+    padding: 5px 50px;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    border: #46cad6 2px solid;
+    color: #46cad6;
+}
+
+#creationMedicine .containerMedicine #btn-task-save:hover {
+    background-color: #46cad6;
+    color: white;
 }
 
 #creationMedicine .containerMedicine .input-group {
@@ -305,7 +320,7 @@
 
 #navbar .styleNavbar .active {
     background-color: white;
-    color: black !important;
+    color: #46cad6 !important;
     border-radius: 18px;
 }
 
@@ -416,3 +431,75 @@
     }
 }
 
+#crearMedicamento {
+    display: none;
+}
+
+#logoutInModal {
+    display: none;
+}
+
+#signInModal .contenedorModal {
+    background-color: #46cad6 !important;
+}
+
+#signInModal .contenedorModal .modal-header {
+    border-bottom: aliceblue;
+    padding: 15px 15px 0px;
+    color: white;
+}
+
+#signInModal .contenedorModal .modal-header .btn-close {
+    background-color: white;
+}
+
+#signInModal .contenedorModal .information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#signInModal .contenedorModal .information .title {
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#signInModal .contenedorModal .modal-body {
+    margin: 0 20px 20px;
+}
+
+#signInModal .contenedorModal .modal-body #signInModalForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#signInModal .contenedorModal .modal-body #signInModalForm #buttonIngresar {
+    padding: 5px 50px;
+    margin: 10px 0 0 0;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    border: white 2px solid;
+    color: #46cad6;
+}
+
+#signInModal .contenedorModal .modal-body #signInModalForm #buttonIngresar:hover {
+    background-color: #117881;
+    color: white;
+}
+
+span {
+    font-weight: bold !important;
+    background-color: white !important;
+    /* border: white 2px solid; */
+    color: #46cad6 !important;
+}

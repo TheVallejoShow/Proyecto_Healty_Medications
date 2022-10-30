@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="../CSS/main.css">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
@@ -35,7 +37,13 @@
                 <a class="textNavbar nav-link" href="../Templates/consult.html">Consultar</a>
               </li>
               <li class="nav-item">
-                <a class="textNavbar nav-link active" href="#">Crear</a>
+                <a id="crearMedicamento" class="textNavbar nav-link active" href="#">Crear</a>
+              </li>
+              <li class="nav-item">
+                <a id="ingresarUsuario" class="textNavbar nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Ingresar</a>
+              </li>
+              <li class="nav-item">
+                <a class="textNavbar nav-link" href="#" id="logoutInModal">Salir</a>
               </li>
             </ul>
           </div>
@@ -48,29 +56,32 @@
         <p class="tittleMedicine">Creación de Medicamentos</p>
         <form id="task-form" class="formMedicine">
           <div class="input-group mb-3">
-            <span class="input-group-text">Nombre:</span>
-            <input type="text" class="form-control" placeholder="Nombre del Medicamento..." aria-label="Name" id="nameMedicine">
+            <span for="validationTooltip05" class="input-group-text">Nombre:</span>
+            <input required type="text" class="form-control" placeholder="Nombre del Medicamento..." aria-label="Name" id="nameMedicine">
+            <div class="invalid-tooltip">
+              Ingresa un nombre por favor...
+            </div>
           </div>
           <!--<label for="tittle">Tittle:</label>-->
           <div class="input-group mb-3">
             <span class="input-group-text">Descipción:</span>
-            <input type="text" class="form-control" placeholder="Descipción del Medicamento..." aria-label="Description" id="desciptionMedicine">
+            <input required type="text" class="form-control" placeholder="Descipción del Medicamento..." aria-label="Description" id="desciptionMedicine">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text">Precauciones:</span>
-            <input type="text" class="form-control" placeholder="Precauciones del Medicamento..." aria-label="Precautions" id="precautionsMedicine">
+            <input required type="text" class="form-control" placeholder="Precauciones del Medicamento..." aria-label="Precautions" id="precautionsMedicine">
           </div>
           <!--<label for="description">Description:</label>-->
           <div class="input-group mb-3">
             <span class="input-group-text">Imagen:</span>
-            <input type="text" class="form-control" placeholder="Imagen del Medicamento..." aria-label="Image" id="imageMedicine">
+            <input required type="text" class="form-control" placeholder="Imagen del Medicamento..." aria-label="Image" id="imageMedicine">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text">Lugar de compra:</span>
-            <input type="text" class="form-control" placeholder="Lugar de compra del Medicamento..." aria-label="Place" id="placeMedicine">
+            <input required type="text" class="form-control" placeholder="Lugar de compra del Medicamento..." aria-label="Place" id="placeMedicine">
           </div>
         </form>
-        <button id="btn-task-save" class="btn btn-dark">Guardar</button>
+        <button id="btn-task-save" type="submit" class="btn btn-dark">Guardar</button>
       </div>
     </section>
     
@@ -80,6 +91,39 @@
       </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="contenedorModal modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="information">
+            <h1 class="title modal-title" id="exampleModalLabel">Ingresa</h1>
+          </div>
+          <div class="modal-body">
+            <form id="signInModalForm" class="formMedicine">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Correo:</span>
+                <input type="text" class="form-control" placeholder="Ingresa tu correo electrónico..." aria-label="Username" id="userName" required>
+              </div>
+              <!--<label for="tittle">Tittle:</label>-->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Contraseña:</span>
+                <input type="password" class="form-control" placeholder="Ingresa tu contraseña" aria-label="Password" id="userPassword" required>
+              </div>
+              <button id="buttonIngresar" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="../app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
 </body>
 </html>

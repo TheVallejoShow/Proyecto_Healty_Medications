@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 editStatus = true;
                 id_Medicine = doc.id;
 
-                taskForm['btn-task-save'].innerText = "Actualizar";
+                //taskForm['btn-task-save'].innerText = "Actualizar";
             })
 
         })
@@ -65,7 +65,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 })
 
 
-taskForm.addEventListener("submit", (event) => {
+const buttonPrueba = document.getElementById("btn-task-save");
+
+buttonPrueba.addEventListener("click", (event) => {
     // No se refrescara el formulario
     event.preventDefault()
 
@@ -79,7 +81,7 @@ taskForm.addEventListener("submit", (event) => {
         saveTask(name.value, description.value, precautions.value, image.value, place.value);
     } else {
         updateMedicine(id_Medicine, {name: name.value, description: description.value, precautions: precautions.value, image: image.value, place: place.value})
-        taskForm['btn-task-save'].innerText = "Guardar";
+        //taskForm['btn-task-save'].innerText = "Guardar";
         editStatus = false;
     }
 
