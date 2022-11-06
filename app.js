@@ -15,8 +15,10 @@ window.addEventListener('DOMContentLoaded', async () => {
         querySnapshot.forEach(doc => {
             //console.log(doc.data());
             const medicine = doc.data();
+            const idMedicine = doc._key.path.segments[6];
+            
             html += `
-                <div class="medicine">
+                <div id="${idMedicine}" class="medicine" onclick="consultarMedicina(id)">
                     <img class="imageMecicine" src="${medicine.image}">
                     <div class="containerText">
                         <p class="tittleMedicine">${medicine.name}</p>
@@ -52,6 +54,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 taskForm['desciptionMedicine'].value = medicine.description;
                 taskForm['precautionsMedicine'].value = medicine.precautions;
                 taskForm['imageMedicine'].value = medicine.image;
+                taskForm['priceMedicine'].value = medicine.price;
                 taskForm['placeMedicine'].value = medicine.place;
 
                 editStatus = true;
@@ -75,12 +78,13 @@ buttonPrueba.addEventListener("click", (event) => {
     const description = taskForm['desciptionMedicine'];
     const precautions = taskForm['precautionsMedicine'];
     const image = taskForm['imageMedicine'];
+    const price = taskForm['priceMedicine'];
     const place = taskForm['placeMedicine'];
 
     if(!editStatus) {
-        saveTask(name.value, description.value, precautions.value, image.value, place.value);
+        saveTask(name.value, description.value, precautions.value, image.value, price.value, place.value);
     } else {
-        updateMedicine(id_Medicine, {name: name.value, description: description.value, precautions: precautions.value, image: image.value, place: place.value})
+        updateMedicine(id_Medicine, {name: name.value, description: description.value, precautions: precautions.value, image: image.value, price: price.value, place: place.value})
         //taskForm['btn-task-save'].innerText = "Guardar";
         editStatus = false;
     }

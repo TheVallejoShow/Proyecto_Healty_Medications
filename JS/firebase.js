@@ -44,8 +44,8 @@ const auth = getAuth(app);
 const db = getFirestore();
 
 // Enviar Datos
-export const saveTask = (name, description, precautions, image, place) => {
-  addDoc(collection(db, "tasks"), {name: name, description: description, precautions: precautions, image: image, place: place});
+export const saveTask = (name, description, precautions, image, price, place) => {
+  addDoc(collection(db, "tasks"), {name: name, description: description, precautions: precautions, image: image, price: price, place: place});
 }
 
 // Traer Datos
@@ -131,3 +131,9 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
+
+export const getItemById = async (idMedicine) => {
+  const colRef = collection(db, 'tasks');
+  const result = await getDoc(doc(colRef, idMedicine));
+  return result.data();
+}

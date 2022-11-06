@@ -11,10 +11,12 @@ window.addEventListener('DOMContentLoaded', async () => {
         //const querySnapshot = await getTasks();
         querySnapshot.forEach(doc => {
             const medicine = doc.data();
+            const idMedicine = doc._key.path.segments[6];
+
             groupOfMedicines.push(medicine);
 
             html += `
-            <div class="medicine">
+            <div id="${idMedicine}" class="medicine" onclick="consultarMedicina(id)">
                 <img class="imageMecicine" src="${medicine.image}">
                 <div class="containerText">
                     <p class="tittleMedicine">${medicine.name}</p>

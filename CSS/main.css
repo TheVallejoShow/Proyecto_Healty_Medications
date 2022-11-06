@@ -503,3 +503,129 @@ span {
     /* border: white 2px solid; */
     color: #46cad6 !important;
 }
+
+#titleDetalle {
+    width: 90%;
+    margin: auto;
+}
+
+#titleDetalle .containerTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 0 0 0;
+}
+
+#titleDetalle .containerTitle .styleTitle {
+    font-size: 40px;
+    font-weight: bold;
+    color: #46cad6;
+}
+
+#medicine {
+    width: 90%;
+    margin: auto;
+}
+
+#medicine .containerMedicine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 10px 0 50px 0;
+}
+
+#medicine .containerMedicine .medicine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#medicine .containerMedicine .medicine .tittleMedicine {
+    font-size: 25px;
+    font-weight: bold;
+    color: #46cad6;
+    margin: 0 0 30px 0;
+}
+
+#medicine .containerMedicine .medicine .containerInformation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#medicine .containerMedicine .medicine .containerInformation .imageMecicine {
+    width: 400px;
+    height: 300px;
+}
+
+#medicine .containerMedicine .medicine .containerInformation .containerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 0 30px;
+    text-align: center;
+    width: 60%;
+}
+
+#medicine .containerMedicine .medicine .containerPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#medicine .containerMedicine .medicine .containerPrice .textPrice {
+    font-size: 30px;
+    font-weight: bold;
+    color: #46cad6;
+    margin: 30px 0 60px 0;
+}
+
+#medicine .containerMedicine .medicine .containerPlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+#medicine .containerMedicine .medicine .containerPlace .textPlace {
+    font-size: 23px;
+    font-weight: bold;
+    color: #46cad6;
+    margin: 0 0 20px;
+}
+
+@media(max-width: 650px) {
+    #titleDetalle .containerTitle {
+        text-align: center;
+    }
+
+    #medicine .containerMedicine .medicine {
+        text-align: center;
+    }
+
+    #medicine .containerMedicine .medicine .containerInformation {
+        flex-direction: column;
+    }
+
+    #medicine .containerMedicine .medicine .containerInformation .imageMecicine {
+        width: 280px;
+        height: 200px;
+    }
+
+    #medicine .containerMedicine .medicine .containerInformation .containerText {
+        margin: 30px 0;
+        width: 80%;
+    }
+
+    iframe {
+        width: 300px;
+    }
+}

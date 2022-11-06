@@ -39,10 +39,10 @@
               <li class="nav-item">
                 <a id="crearMedicamento" class="textNavbar nav-link active" href="#">Crear</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="display: none !important;">
                 <a id="ingresarUsuario" class="textNavbar nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Ingresar</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="display: none !important;">
                 <a class="textNavbar nav-link" href="#" id="logoutInModal">Salir</a>
               </li>
             </ul>
@@ -75,6 +75,10 @@
           <div class="input-group mb-3">
             <span class="input-group-text">Imagen:</span>
             <input required type="text" class="form-control" placeholder="Imagen del Medicamento..." aria-label="Image" id="imageMedicine">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Precio:</span>
+            <input required type="number" class="form-control" placeholder="Precio del Medicamento..." aria-label="Place" id="priceMedicine">
           </div>
           <div class="input-group mb-3">
             <span class="input-group-text">Lugar de compra:</span>
@@ -118,6 +122,13 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function consultarMedicina(id) {
+        sessionStorage.setItem('idMedicine', id);
+        location.href = "./detalle.html"
+      }
+    </script>
 
     <script type="module" src="../app.js"></script>
 
