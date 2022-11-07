@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
             const idMedicine = doc._key.path.segments[6];
             
             html += `
-                <div id="${idMedicine}" class="medicine" onclick="consultarMedicina(id)">
+                <div id="${idMedicine}" class="medicine">
                     <img class="imageMecicine" src="${medicine.image}">
                     <div class="containerText">
                         <p class="tittleMedicine">${medicine.name}</p>
