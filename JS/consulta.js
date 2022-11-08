@@ -11,11 +11,11 @@ window.addEventListener('DOMContentLoaded', async () => {
         //const querySnapshot = await getTasks();
         querySnapshot.forEach(doc => {
             const medicine = doc.data();
-            const idMedicine = doc._key.path.segments[6];
+            medicine.id = doc._key.path.segments[6];
             groupOfMedicines.push(medicine);
 
             html += `
-            <div id="${idMedicine}" class="medicine" onclick="consultarMedicina(id)">
+            <div id="${medicine.id}" class="medicine" onclick="consultarMedicina(id)">
                 <img class="imageMecicine" src="${medicine.image}">
                 <div class="containerText">
                     <p class="tittleMedicine">${medicine.name}</p>
@@ -42,7 +42,7 @@ const filtrar = () =>  {
         if (name.indexOf(textUser) !== -1) {
 
             tasksContainer.innerHTML += `
-            <div class="medicine">
+            <div id="${medicine.id}" class="medicine" onclick="consultarMedicina(id)">
                 <img class="imageMecicine" src="${medicine.image}">
                 <div class="containerText">
                     <p class="tittleMedicine">${medicine.name}</p>
